@@ -1,0 +1,8 @@
+C:\Users\Jan Lange\Source\Repos\TeknoMuteScript\TeknoMuteScript\bin\Release\TeknoMuteScript.dll
+C:\Users\Jan Lange\Source\Repos\TeknoMuteScript\TeknoMuteScript\bin\Release\TeknoMuteScript.pdb
+C:\Users\Jan Lange\Source\Repos\TeknoMuteScript\TeknoMuteScript\bin\Release\InfinityScript.dll
+C:\Users\Jan Lange\Source\Repos\TeknoMuteScript\TeknoMuteScript\obj\Release\TeknoMuteScript.csprojAssemblyReference.cache
+C:\Users\Jan Lange\Source\Repos\TeknoMuteScript\TeknoMuteScript\obj\Release\TeknoMuteScript.csproj.CoreCompileInputs.cache
+C:\Users\Jan Lange\Source\Repos\TeknoMuteScript\TeknoMuteScript\obj\Release\TeknoMuteScript.csproj.CopyComplete
+C:\Users\Jan Lange\Source\Repos\TeknoMuteScript\TeknoMuteScript\obj\Release\TeknoMuteScript.dll
+C:\Users\Jan Lange\Source\Repos\TeknoMuteScript\TeknoMuteScript\obj\Release\TeknoMuteScript.pdb
