@@ -11,17 +11,11 @@ namespace TeknoMuteScript
 	{
 		public MuteScript()
 		{
-			PlayerConnected += player => { player.SetField("muted", false); };
+			PlayerConnected += player => { player.SetField("muted", 0); };
 		}
 
 		public override EventEat OnSay3(Entity player, ChatType type, string name, ref string message)
 		{
-			if (player.GetField<bool>("muted"))
-			{
-				Utils.SayTo(player, "You are muted!");
-				return EventEat.EatGame;
-			}
-
 			/************************************************* Commands ***************************************************/
 
 			if (message.StartsWith("!"))
@@ -37,12 +31,11 @@ namespace TeknoMuteScript
 					{
 						if (cmdParams.Length != 1)
 						{
-							player.Call("iprintbold", "Usage: !mute <name>");
+							player.Call("iprintlnbold", "Usage: !mute <name>");
 							return EventEat.EatGame;
 						}
 
 						var playerToMute = Utils.FindEntityByName(cmdParams[0], Players);
-
 						if (playerToMute == null)
 						{
 							Utils.SayTo(player, "Found none or multiple players with that name!");
@@ -60,23 +53,27 @@ namespace TeknoMuteScript
 
 				return EventEat.EatGame;
 			}
+			
+			if (player.GetField<int>("muted") != 0)
+			{
+				Utils.SayTo(player, "You are muted!");
+				return EventEat.EatGame;
+			}
 
 			return base.OnSay3(player, type, name, ref message);
 		}
 
 		private static void MutePlayer(Entity player, Entity admin)
 		{
-			if (player.GetField<bool>("muted"))
+			if (player.GetField<int>("muted") != 0)
 			{
-				player.SetField("muted", false);
+				player.SetField("muted", 1);
 				Utils.Say(player + " has been ^1muted ^7by " + admin);
-				Utils.SayTo(player, "You have been ^1muted^7!");
 			}
 			else
 			{
-				player.SetField("muted", true);
+				player.SetField("muted", 0);
 				Utils.Say(player + " has been ^2unmuted ^7by " + admin);
-				Utils.SayTo(player, "You have been ^2unmuted^7!");
 			}
 		}
 	}
